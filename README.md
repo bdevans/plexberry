@@ -9,13 +9,13 @@ The accompanying script `setup_plex.sh` is designed to install and configure ple
 
 ## Useful commands
 
-To fully update the system (including firmware):
+* To fully update the system (including firmware):
 ```
 sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo rpi-update
 sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 ```
 
-Check attached disks
+* Check attached disks
 `lsblk`
 
 ## Useful links
@@ -219,7 +219,7 @@ sudo git clone https://github.com/Hellowlol/HTPC-Manager /opt/HTPCManager
 sudo chown -R pi:pi /opt/HTPCManager
 python /opt/HTPCManager/Htpc.py --daemon
 ```
-# Start at boot
+## Start at boot
 ```
 sudo cp /opt/HTPCManager/initd /etc/init.d/htpcmanager
 sudo nano /etc/init.d/htpcmanager
