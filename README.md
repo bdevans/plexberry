@@ -5,6 +5,21 @@ A guide to setting up a plex media server on a Raspberry Pi.
 
 This is a collection of ideas and notes (largely adapted from https://www.element14.com/community/community/raspberry-pi/raspberrypi_projects/blog/2016/03/11/a-more-powerful-plex-media-server-using-raspberry-pi-3 and htpcguides.com) for installing and configuring plex on a Raspberry Pi 3. Use at your own risk!
 
+The accompanying script `setup_plex.sh` is designed to install and configure plex on a Raspberry Pi installed with Raspbian.
+
+## Useful commands
+
+To fully update the system (including firmware):
+```
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo rpi-update
+sudo apt-get autoremove && sudo apt-get clean && sudo reboot
+```
+
+Check attached disks
+`lsblk`
+
+## Useful links
+
 https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
 http://www.htpcguides.com/install-plex-media-server-on-raspberry-pi-2/
 http://www.htpcguides.com/install-plex-media-server-on-banana-pi-with-bananian/
