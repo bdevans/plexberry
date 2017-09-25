@@ -52,9 +52,9 @@ https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
 
 2. Install an OS
 * Try MINIBIAN for a minimal OS.
-	- http://minibianpi.wordpress.com/
-	- https://sourceforge.net/projects/minibian/
-	- http://www.htpcguides.com/lightweight-raspbian-distro-minibian-initial-setup/
+    - http://minibianpi.wordpress.com/
+    - https://sourceforge.net/projects/minibian/
+    - http://www.htpcguides.com/lightweight-raspbian-distro-minibian-initial-setup/
 ```
 apt-get update
 apt-get install nano sudo rpi-update raspi-config usbutils dosfstools -y
@@ -100,7 +100,7 @@ sudo raspi-config
 - http://www.htpcguides.com/install-plex-media-server-raspberry-pi-2-3-manually/
 
 * Raspbian
-	- https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
+    - https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
     * diskutil list
     * diskutil unmountDisk /dev/disk2
     * sudo dd bs=1m if=~/Downloads/2016-05-27-raspbian-jessie.img of=/dev/rdisk2
@@ -146,7 +146,7 @@ cat /proc/mounts
 ## Test fstab
 ```
 sudo mount -a
-mount_disk.sh sda1 exfat library
+mount_disk.sh sda1 ext4 library
 ```
 ## Get format automatically? library is optional
     * Move cache to external harddisk
@@ -210,12 +210,12 @@ Backup existing images with dd
 13. Install HTPC Manager: http://htpc.io/
 * http://www.htpcguides.com/install-htpc-manager-banana-pi-with-bananian/
 Supports:
-	* Kodi
-	* Sick Beard - periodic TV show downloading
-	* SABnzbd - usenet downloading
-	* CouchPotato - feature length video downloading
-	* Transmission - bittorrent client
-	* Python
+    * Kodi
+    * Sick Beard - periodic TV show downloading
+    * SABnzbd - usenet downloading
+    * CouchPotato - feature length video downloading
+    * Transmission - bittorrent client
+    * Python
 ```
 sudo apt-get install build-essential git python-imaging python-dev python-setuptools python-pip python-cherrypy vnstat smartmontools -y
 sudo pip install psutil
@@ -239,6 +239,7 @@ vsftpd
 NFS
 Samba
 nginx for reverse proxy: http://www.htpcguides.com/?s=reverse+proxy
+
 
 Honourable mentions
 ===================
