@@ -40,25 +40,44 @@ https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
 apt-get update
 apt-get install nano sudo rpi-update raspi-config usbutils dosfstools -y
 apt-get remove initramfs-tools -y
+```
+
+## Expand SD Filesystem and Overclock
+```
 raspi-config
 reboot
+```
+
+## Update Raspberry Pi Firmware
+```
 rpi-update
 reboot
+```
+
+## Update the packages and distribution
+```
 apt-get upgrade -y
 apt-get dist-upgrade -y
 ```
 
 ## Optional WiFi tools
+`apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y`
+
+## Add the user
 ```
-apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y
 adduser pi
 usermod -a -G sudo pi
 ```
-## Optional install GUI
+
+## Optional install GUI then enable boot to desktop
 ```
 sudo apt-get install lxde -y
-sudo apt-get clean
+sudo raspi-config
 ```
+
+## Clean the packages
+`sudo apt-get clean`
+
 - http://www.htpcguides.com/install-plex-media-server-raspberry-pi-2-3-manually/
 
 * Raspbian
