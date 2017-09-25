@@ -2,8 +2,15 @@
 # https://www.element14.com/community/community/raspberry-pi/raspberrypi_projects/blog/2016/03/11/a-more-powerful-plex-media-server-using-raspberry-pi-3
 VERSION=jessie
 LIBRARY=library
-DISK=sda1
-FORMAT=ext4 #exfat #vfat ntfs
+DISK=${1:-sda1}
+FORMAT=${2:-ext4} #exfat #vfat ntfs
+
+echo "This will mount disk $DISK with the filesystem $FORMAT"
+read -p "Is this correct? " -n 1 -r
+#if [[ $REPLY =~ ^[Yy]$ ]]
+#then
+    # do dangerous stuff
+#fi
 
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get update && sudo apt-get dist-upgrade
