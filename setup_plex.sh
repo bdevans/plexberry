@@ -3,7 +3,7 @@
 VERSION=jessie
 LIBRARY=library
 DISK=sda1
-FORMAT=exfat #vfat ntfs
+FORMAT=ext4 #exfat #vfat ntfs
 
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get update && sudo apt-get dist-upgrade
