@@ -33,9 +33,10 @@ https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
 
 2. Install an OS
 * Try MINIBIAN for a minimal OS.
-# http://minibianpi.wordpress.com/
-# https://sourceforge.net/projects/minibian/
-# http://www.htpcguides.com/lightweight-raspbian-distro-minibian-initial-setup/
+	- http://minibianpi.wordpress.com/
+	- https://sourceforge.net/projects/minibian/
+	- http://www.htpcguides.com/lightweight-raspbian-distro-minibian-initial-setup/
+```
 apt-get update
 apt-get install nano sudo rpi-update raspi-config usbutils dosfstools -y
 apt-get remove initramfs-tools -y
@@ -45,30 +46,38 @@ rpi-update
 reboot
 apt-get upgrade -y
 apt-get dist-upgrade -y
-# Optional WiFi tools
-#apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y
+```
+
+## Optional WiFi tools
+```
+apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y
 adduser pi
 usermod -a -G sudo pi
-# Optional install GUI
-#sudo apt-get install lxde -y
+```
+## Optional install GUI
+```
+sudo apt-get install lxde -y
 sudo apt-get clean
-# http://www.htpcguides.com/install-plex-media-server-raspberry-pi-2-3-manually/
+```
+- http://www.htpcguides.com/install-plex-media-server-raspberry-pi-2-3-manually/
 
 * Raspbian
-# https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
+	- https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
     * diskutil list
     * diskutil unmountDisk /dev/disk2
     * sudo dd bs=1m if=~/Downloads/2016-05-27-raspbian-jessie.img of=/dev/rdisk2
 
-# Ready-made images
-# https://github.com/igorpecovnik/Debian-micro-home-server
-# http://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
-# http://www.htpcguides.com/raspberry-pi-2-home-media-server-installer-image/
+## Ready-made images
+* https://github.com/igorpecovnik/Debian-micro-home-server
+* http://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
+* http://www.htpcguides.com/raspberry-pi-2-home-media-server-installer-image/
 
 
 * Expand the filesystem
+```
 sudo raspi-config
 sudo reboot
+```
 
 * Change the password
 
@@ -89,19 +98,23 @@ http://www.htpcguides.com/properly-mount-usb-storage-raspberry-pi/
 http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/
 https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/
 https://www.raspberrypi.org/forums/viewtopic.php?t=38429
+```
 dmesg
 ls -l /dev/disk/by-uuid/
 sudo blkid
 sudo fdisk -l
 cat /proc/mounts
-# Test fstab
+```
+## Test fstab
+```
 sudo mount -a
 mount_disk.sh sda1 exfat library
-# Get format automatically? library is optional
+```
+## Get format automatically? library is optional
     * Move cache to external harddisk
 
 Backup media with rsync [options] SOURCE DESTINATION
-rsync -arvhP /mnt/backup/Music /mnt/library/
+`rsync -arvhP /mnt/backup/Music /mnt/library/`
 
 6. Setup a TV tuner
 * Client
@@ -153,11 +166,11 @@ Backup existing images with dd
     * Back up SD card with scheduled dd
 
 12. Set DHCP reservation (internal) and configure dynamic dns (external)
-# http://www.htpcguides.com/nag-free-dynamic-dns-raspberry-pi/
-# https://www.dnsdynamic.org/api.php
+* http://www.htpcguides.com/nag-free-dynamic-dns-raspberry-pi/
+* https://www.dnsdynamic.org/api.php
 
 13. Install HTPC Manager: http://htpc.io/
-# http://www.htpcguides.com/install-htpc-manager-banana-pi-with-bananian/
+* http://www.htpcguides.com/install-htpc-manager-banana-pi-with-bananian/
 Supports:
 	* Kodi
 	* Sick Beard - periodic TV show downloading
@@ -165,17 +178,21 @@ Supports:
 	* CouchPotato - feature length video downloading
 	* Transmission - bittorrent client
 	* Python
+```
 sudo apt-get install build-essential git python-imaging python-dev python-setuptools python-pip python-cherrypy vnstat smartmontools -y
 sudo pip install psutil
 sudo git clone https://github.com/Hellowlol/HTPC-Manager /opt/HTPCManager
 sudo chown -R pi:pi /opt/HTPCManager
 python /opt/HTPCManager/Htpc.py --daemon
+```
 # Start at boot
+```
 sudo cp /opt/HTPCManager/initd /etc/init.d/htpcmanager
 sudo nano /etc/init.d/htpcmanager
 >> APP_PATH=/opt/HTPCManager
 sudo chmod +x /etc/init.d/htpcmanager
 sudo update-rc.d htpcmanager defaults
+```
 
 Access: http://ip.address:8085
 
@@ -217,8 +234,10 @@ Script to set up plex client on Kodi
 Update
 ======
 
-# https://www.raspberrypi.org/blog/introducing-pixel/
+* https://www.raspberrypi.org/blog/introducing-pixel/
+```
 sudo apt-get update
 sudo apt-get dist-upgrade
 sudo apt-get install -y rpi-chromium-mods python-sense-emu python3-sense-emu python-sense-emu-doc
 sudo apt-get install -y realvnc-vnc-viewer realvnc-vnc-server
+```
