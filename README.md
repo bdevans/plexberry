@@ -24,17 +24,17 @@ rsync [options] SOURCE DESTINATION
 
 ## Useful links
 
-https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
-http://www.htpcguides.com/install-plex-media-server-on-raspberry-pi-2/
-http://www.htpcguides.com/install-plex-media-server-on-banana-pi-with-bananian/
-http://www.htpcguides.com/raspberry-pi-2-home-media-server-installer-image/
-http://www.htpcguides.com/raspberry-pi-2-media-server-image-2015-released/
-https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/
-https://pimylifeup.com/raspberry-pi-plex-server/
-https://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
+* https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
+* http://www.htpcguides.com/install-plex-media-server-on-raspberry-pi-2/
+* http://www.htpcguides.com/install-plex-media-server-on-banana-pi-with-bananian/
+* http://www.htpcguides.com/raspberry-pi-2-home-media-server-installer-image/
+* http://www.htpcguides.com/raspberry-pi-2-media-server-image-2015-released/
+* https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/
+* https://pimylifeup.com/raspberry-pi-plex-server/
+* https://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
 
-https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
-https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
+* https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
+* https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
 
 
 1. Hardware
