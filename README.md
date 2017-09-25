@@ -18,6 +18,10 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 * Check attached disks
 `lsblk`
 
+* Backup or transfer media
+rsync [options] SOURCE DESTINATION
+`rsync -arvhP /mnt/backup/Music /mnt/library/`
+
 ## Useful links
 
 https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
@@ -114,7 +118,7 @@ sudo reboot
 ```
 
 * Change the password
-
+`passwd`
 
 3. Install Plex server
     * setup_plex.sh
