@@ -3,7 +3,7 @@ Plexberry
 
 A guide to setting up a plex media server on a Raspberry Pi.
 
-This is a collection of ideas and notes (largely adapted from https://www.element14.com/community/community/raspberry-pi/raspberrypi_projects/blog/2016/03/11/a-more-powerful-plex-media-server-using-raspberry-pi-3 and htpcguides.com) for installing and configuring plex on a Raspberry Pi 3. Use at your own risk!
+This is a collection of ideas and notes (largely adapted from [element14.com](https://www.element14.com/community/community/raspberry-pi/raspberrypi_projects/blog/2016/03/11/a-more-powerful-plex-media-server-using-raspberry-pi-3) and [htpcguides.com](https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/)) for installing and configuring plex on a Raspberry Pi 3. Use at your own risk!
 
 The accompanying script `setup_plex.sh` is designed to install and configure plex on a Raspberry Pi installed with Raspbian.
 
@@ -19,7 +19,7 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 `lsblk`
 
 * Backup or transfer media
-rsync [options] SOURCE DESTINATION
+`rsync [options] SOURCE DESTINATION`
 `rsync -arvhP /mnt/backup/Music /mnt/library/`
 
 ## Useful links
