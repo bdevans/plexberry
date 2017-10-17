@@ -38,17 +38,18 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 
 
 1. Hardware
-    * >> Benchmarks of nine boards:  http://www.phoronix.com/scan.php?page=article&item=raspberry-pi-3&num=1
-    * Raspberry Pi 2
-    * Raspberry Pi 3
-    * ODROID-C2
-    * Banana Pi M3 http://www.banana-pi.org/m3.html
-    * NanoPC-T3 http://www.friendlyarm.com/index.php?route=product/product&path=69&product_id=123
-    * PixiePro https://store.treats4geeks.com/index.php/pixiepro-27.html
-    * HummingBoard https://www.solid-run.com/
+    * Boards
+       * Benchmarks of nine boards:  http://www.phoronix.com/scan.php?page=article&item=raspberry-pi-3&num=1
+       * Raspberry Pi 2
+       * Raspberry Pi 3
+       * ODROID-C2
+       * Banana Pi M3 http://www.banana-pi.org/m3.html
+       * NanoPC-T3 http://www.friendlyarm.com/index.php?route=product/product&path=69&product_id=123
+       * PixiePro https://store.treats4geeks.com/index.php/pixiepro-27.html
+       * HummingBoard https://www.solid-run.com/
 
-    SD Cards: http://elinux.org/RPi_SD_cards
-    USB hubs: http://elinux.org/RPi_Powered_USB_Hubs
+    * SD Cards: http://elinux.org/RPi_SD_cards
+    * USB hubs: http://elinux.org/RPi_Powered_USB_Hubs
 
 2. Install an OS
 * Try MINIBIAN for a minimal OS.
@@ -125,17 +126,17 @@ sudo reboot
     * Set static IP address and change hostname
 
 4. Setup transcoding
-You should set Plex to use your external hard drive for temporary transcoding data after you have mounted your drives properly.
-Click the settings icon in the top right, Click Server and then Transcoder in the left pane.
-Make sure SHOW ADVANCED is enabled underneath Server.
-Scroll down to Transcoder temporary directory and set your USB external drive’s mount path (e.g. /mnt/usbstorage not /dev/sda1)
-Scroll down further and hit Save Changes
+   * You should set Plex to use your external hard drive for temporary transcoding data after you have mounted your drives properly.
+   * Click the settings icon in the top right, Click Server and then Transcoder in the left pane.
+   * Make sure SHOW ADVANCED is enabled underneath Server.
+   * Scroll down to Transcoder temporary directory and set your USB external drive’s mount path (e.g. /mnt/usbstorage not /dev/sda1)
+   * Scroll down further and hit Save Changes
 
 5. Mount a harddisk
-http://www.htpcguides.com/properly-mount-usb-storage-raspberry-pi/
-http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/
-https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/
-https://www.raspberrypi.org/forums/viewtopic.php?t=38429
+   * http://www.htpcguides.com/properly-mount-usb-storage-raspberry-pi/
+   * http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/
+   * https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/
+   * https://www.raspberrypi.org/forums/viewtopic.php?t=38429
 ```
 dmesg
 ls -l /dev/disk/by-uuid/
@@ -156,16 +157,16 @@ Backup media with rsync [options] SOURCE DESTINATION
 
 6. Setup a TV tuner
 * Client
-    * >> http://kodi.wiki/view/PVR
-    * >> https://linuxtv.org
+    * http://kodi.wiki/view/PVR
+    * https://linuxtv.org
     DVB-T
     * https://linuxtv.org/wiki/index.php/DVB-T_USB_Devices
     * https://www.raspberrypi.org/forums/viewtopic.php?f=35&t=18838
     dmesg | grep dvb-usb
     * http://www.hauppauge.co.uk/site/support/support_all.html?prod=30
 * Plex server
-    * >> https://forums.plex.tv/discussion/139628/plex-and-tv-tuners
-    * >> https://www.reddit.com/r/PleX/comments/2zhap7/plex_and_ota_tuners/
+    * https://forums.plex.tv/discussion/139628/plex-and-tv-tuners
+    * https://www.reddit.com/r/PleX/comments/2zhap7/plex_and_ota_tuners/
     * HDHomerun https://www.silicondust.com/hdhomerun/ using the HDHR View Plugin (requires Plex Pass)
     *** https://tvheadend.org
         - https://tvheadend.org/projects/tvheadend/wiki/AptRepository
@@ -177,16 +178,16 @@ Backup media with rsync [options] SOURCE DESTINATION
     a) transcoding cache and
     b) metadata: /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Metadata/
 
-to Harddisk before adding folders
-Click the settings icon in the top right, Click Server and then Transcoder in the left pane.
-Make sure SHOW ADVANCED is enabled underneath Server.
-Scroll down to Transcoder temporary directory and set your USB external drive’s mount path (e.g. /mnt/usbstorage not /dev/sda1)
-Scroll down further and hit Save Changes
-https://smyl.es/how-to-move-plex-metadata-and-index-data-to-new-driver-andor-directory-location/
+    to Harddisk before adding folders
+* Click the settings icon in the top right, Click Server and then Transcoder in the left pane.
+* Make sure SHOW ADVANCED is enabled underneath Server.
+* Scroll down to Transcoder temporary directory and set your USB external drive’s mount path (e.g. /mnt/usbstorage not /dev/sda1)
+* Scroll down further and hit Save Changes
+* https://smyl.es/how-to-move-plex-metadata-and-index-data-to-new-driver-andor-directory-location/
 
 8. Open http://ip.address:32400/web and add media folders.
 To manually start the plex server:
-sudo bash /usr/lib/plexmediaserver/start.sh &
+`sudo bash /usr/lib/plexmediaserver/start.sh &`
 
 9. Test
 Backup existing images with dd
@@ -207,7 +208,13 @@ Backup existing images with dd
 * http://www.htpcguides.com/nag-free-dynamic-dns-raspberry-pi/
 * https://www.dnsdynamic.org/api.php
 
-13. Install HTPC Manager: http://htpc.io/
+13. Setup handbrake to automatically transcode files offline
+    * https://www.rapidseedbox.com/kb/beginners-guide-handbrake
+    * https://b3n.org/automatic-ripping-machine/
+    * https://github.com/mummybot/convert-videos-for-plex
+    * https://github.com/mdhiggins/sickbeard_mp4_automator
+
+14. Install HTPC Manager: http://htpc.io/
 * http://www.htpcguides.com/install-htpc-manager-banana-pi-with-bananian/
 Supports:
     * Kodi
@@ -235,19 +242,19 @@ sudo update-rc.d htpcmanager defaults
 Access: http://ip.address:8085
 
 14. Other useful services
-vsftpd
-NFS
-Samba
-nginx for reverse proxy: http://www.htpcguides.com/?s=reverse+proxy
+* vsftpd
+* NFS
+* Samba
+* nginx for reverse proxy: http://www.htpcguides.com/?s=reverse+proxy
 
 
 Honourable mentions
 ===================
 
-MediaPortal (Includes TV recording, Windows only) http://www.team-mediaportal.com
-MythTV https://www.mythtv.org (also has a plugin for Kodi)
-Emby (clone of plex)
-https://github.com/RasPlex/OpenPHT (Fork of RasPlex)
+* MediaPortal (Includes TV recording, Windows only) http://www.team-mediaportal.com
+* MythTV https://www.mythtv.org (also has a plugin for Kodi)
+* Emby (clone of plex)
+* https://github.com/RasPlex/OpenPHT (Fork of RasPlex)
 
 
 Client
