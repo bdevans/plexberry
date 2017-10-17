@@ -52,6 +52,14 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
     * USB hubs: http://elinux.org/RPi_Powered_USB_Hubs
 
 2. Install an OS
+
+* Raspbian
+    - https://www.raspberrypi.org/documentation/installation/installing-images/
+    - e.g. [macOS](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md)
+    - `diskutil list`
+    - `diskutil unmountDisk /dev/disk2`
+    - `sudo dd bs=1m if=~/Downloads/2016-05-27-raspbian-jessie.img of=/dev/rdisk2`
+
 * Try MINIBIAN for a minimal OS.
     - http://minibianpi.wordpress.com/
     - https://sourceforge.net/projects/minibian/
@@ -98,30 +106,17 @@ sudo raspi-config
 ## Clean the packages
 `sudo apt-get clean`
 
-- http://www.htpcguides.com/install-plex-media-server-raspberry-pi-2-3-manually/
-
-* Raspbian
-    - https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
-    * diskutil list
-    * diskutil unmountDisk /dev/disk2
-    * sudo dd bs=1m if=~/Downloads/2016-05-27-raspbian-jessie.img of=/dev/rdisk2
-
 ## Ready-made images
 * https://github.com/igorpecovnik/Debian-micro-home-server
 * http://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
 * http://www.htpcguides.com/raspberry-pi-2-home-media-server-installer-image/
 
 
-* Expand the filesystem
-```
-sudo raspi-config
-sudo reboot
-```
-
 * Change the password
 `passwd`
 
 3. Install Plex server
+    - http://www.htpcguides.com/install-plex-media-server-raspberry-pi-2-3-manually/
     * setup_plex.sh
     * Set static IP address and change hostname
 
