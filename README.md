@@ -221,7 +221,15 @@ Backup existing images with dd
     * https://github.com/mummybot/convert-videos-for-plex
     * https://github.com/mdhiggins/sickbeard_mp4_automator
 
-14. Install HTPC Manager: http://htpc.io/
+14. Rip DVDs to Plex https://www.reddit.com/r/PleX/comments/5l8owa/question_best_practice_for_ripping_owned_dvds_to/
+	  * Handbreak (lossy ~1GB)
+	  * MakeMKV (lossless ~4-8GB)
+
+15. Re-rip CDs to FLAC (FFmpeg, lossless audio) 
+    * Exact Audio Copy https://www.dbpoweramp.com/cd-ripper.htm 
+    * http://tmkk.undo.jp/xld/index_e.html
+
+16. Install HTPC Manager: http://htpc.io/
    * http://www.htpcguides.com/install-htpc-manager-banana-pi-with-bananian/
    Supports:
        * Kodi
@@ -248,12 +256,19 @@ Backup existing images with dd
 
 Access: http://ip.address:8085
 
-14. Other useful services
+17. Setup Dynamic DNS
+	https://www.duckdns.org/install.jsp
+	https://www.dynu.com/en-US/
+	https://www.duiadns.net/personal-account
+	https://www.clearos.com/products/purchase/clearos-marketplace-apps/cloud/Dynamic_DNS
+
+18. Other useful services
    * vsftpd
    * NFS
    * Samba
    * nginx for reverse proxy: http://www.htpcguides.com/?s=reverse+proxy
 
+19. [Heatsink for Raspberry Pi](https://www.amazon.co.uk/GorillaPi-Raspberry-aluminium-Significant-Advantage/dp/B01FY9196K)
 
 Honourable mentions
 ===================
