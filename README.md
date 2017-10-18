@@ -270,17 +270,9 @@ Access: http://ip.address:8085
 
 19. [Heatsink for Raspberry Pi](https://www.amazon.co.uk/GorillaPi-Raspberry-aluminium-Significant-Advantage/dp/B01FY9196K)
 
-Honourable mentions
-===================
 
-* MediaPortal (Includes TV recording, Windows only) http://www.team-mediaportal.com
-* MythTV https://www.mythtv.org (also has a plugin for Kodi)
-* Emby (clone of plex)
-* https://github.com/RasPlex/OpenPHT (Fork of RasPlex)
-
-
-Client
-======
+Plex Clients
+============
 
 * RasPlex
     - http://www.rasplex.com/get-started/download-rasplex.html
@@ -298,14 +290,11 @@ Script to set up plex client on Kodi
 * OpenELEC
     - http://www.htpcbeginner.com/openelec-vs-osmc-raspberry-pi/2/
 
+Honourable mentions
+===================
 
-Update
-======
-
-* https://www.raspberrypi.org/blog/introducing-pixel/
-```
-sudo apt-get update
-sudo apt-get dist-upgrade
-sudo apt-get install -y rpi-chromium-mods python-sense-emu python3-sense-emu python-sense-emu-doc
-sudo apt-get install -y realvnc-vnc-viewer realvnc-vnc-server
-```
+Some other media servers/organisers to consider include:
+* MediaPortal (Includes TV recording, Windows only) http://www.team-mediaportal.com
+* MythTV https://www.mythtv.org (also has a plugin for Kodi)
+* Emby (clone of plex)
+* https://github.com/RasPlex/OpenPHT (Fork of RasPlex)
