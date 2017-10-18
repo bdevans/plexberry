@@ -24,17 +24,17 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 
 ## Useful links
 
-* https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
-* http://www.htpcguides.com/install-plex-media-server-on-raspberry-pi-2/
-* http://www.htpcguides.com/install-plex-media-server-on-banana-pi-with-bananian/
-* http://www.htpcguides.com/raspberry-pi-2-home-media-server-installer-image/
-* http://www.htpcguides.com/raspberry-pi-2-media-server-image-2015-released/
-* https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/
-* https://pimylifeup.com/raspberry-pi-plex-server/
-* https://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
+   * https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
+   * http://www.htpcguides.com/install-plex-media-server-on-raspberry-pi-2/
+   * http://www.htpcguides.com/install-plex-media-server-on-banana-pi-with-bananian/
+   * http://www.htpcguides.com/raspberry-pi-2-home-media-server-installer-image/
+   * http://www.htpcguides.com/raspberry-pi-2-media-server-image-2015-released/
+   * https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/
+   * https://pimylifeup.com/raspberry-pi-plex-server/
+   * https://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
 
-* https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
-* https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
+   * https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
+   * https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
 
 ## Building the plex server
 
@@ -154,23 +154,23 @@ sudo raspi-config
    ```rsync -arvhP /mnt/backup/Music /mnt/library/```
 
 6. Setup a TV tuner
-* Client
-    * http://kodi.wiki/view/PVR
-    * https://linuxtv.org
-    DVB-T
-    * https://linuxtv.org/wiki/index.php/DVB-T_USB_Devices
-    * https://www.raspberrypi.org/forums/viewtopic.php?f=35&t=18838
-    dmesg | grep dvb-usb
-    * http://www.hauppauge.co.uk/site/support/support_all.html?prod=30
-* Plex server
-    * https://forums.plex.tv/discussion/139628/plex-and-tv-tuners
-    * https://www.reddit.com/r/PleX/comments/2zhap7/plex_and_ota_tuners/
-    * HDHomerun https://www.silicondust.com/hdhomerun/ using the HDHR View Plugin (requires Plex Pass)
-    * https://tvheadend.org
-        - https://tvheadend.org/projects/tvheadend/wiki/AptRepository
-    * http://www.mumudvb.net wget http://www.mumudvb.net/release/mumudvb_2-1_armhf.deb
-    * https://www.mythtv.org/wiki/Raspberry_Pi
-    * http://dvblogic.com/en/dvblink/
+   * Client
+       * http://kodi.wiki/view/PVR
+       * https://linuxtv.org
+       DVB-T
+       * https://linuxtv.org/wiki/index.php/DVB-T_USB_Devices
+       * https://www.raspberrypi.org/forums/viewtopic.php?f=35&t=18838
+       dmesg | grep dvb-usb
+       * http://www.hauppauge.co.uk/site/support/support_all.html?prod=30
+   * Plex server
+       * https://forums.plex.tv/discussion/139628/plex-and-tv-tuners
+       * https://www.reddit.com/r/PleX/comments/2zhap7/plex_and_ota_tuners/
+       * HDHomerun https://www.silicondust.com/hdhomerun/ using the HDHR View Plugin (requires Plex Pass)
+       * https://tvheadend.org
+           - https://tvheadend.org/projects/tvheadend/wiki/AptRepository
+       * http://www.mumudvb.net wget http://www.mumudvb.net/release/mumudvb_2-1_armhf.deb
+       * https://www.mythtv.org/wiki/Raspberry_Pi
+       * http://dvblogic.com/en/dvblink/
 
 7. Move
     a) transcoding cache and
@@ -203,8 +203,8 @@ Backup existing images with dd
     * Back up SD card with scheduled dd
 
 12. Set DHCP reservation (internal) and configure dynamic dns (external)
-* http://www.htpcguides.com/nag-free-dynamic-dns-raspberry-pi/
-* https://www.dnsdynamic.org/api.php
+   * http://www.htpcguides.com/nag-free-dynamic-dns-raspberry-pi/
+   * https://www.dnsdynamic.org/api.php
 
 13. Setup handbrake to automatically transcode files offline
     * https://www.rapidseedbox.com/kb/beginners-guide-handbrake
@@ -214,37 +214,37 @@ Backup existing images with dd
     * https://github.com/mdhiggins/sickbeard_mp4_automator
 
 14. Install HTPC Manager: http://htpc.io/
-* http://www.htpcguides.com/install-htpc-manager-banana-pi-with-bananian/
-Supports:
-    * Kodi
-    * Sick Beard - periodic TV show downloading
-    * SABnzbd - usenet downloading
-    * CouchPotato - feature length video downloading
-    * Transmission - bittorrent client
-    * Python
-```
-sudo apt-get install build-essential git python-imaging python-dev python-setuptools python-pip python-cherrypy vnstat smartmontools -y
-sudo pip install psutil
-sudo git clone https://github.com/Hellowlol/HTPC-Manager /opt/HTPCManager
-sudo chown -R pi:pi /opt/HTPCManager
-python /opt/HTPCManager/Htpc.py --daemon
-```
-* Start at boot
-```
-sudo cp /opt/HTPCManager/initd /etc/init.d/htpcmanager
-sudo nano /etc/init.d/htpcmanager
->> APP_PATH=/opt/HTPCManager
-sudo chmod +x /etc/init.d/htpcmanager
-sudo update-rc.d htpcmanager defaults
-```
+   * http://www.htpcguides.com/install-htpc-manager-banana-pi-with-bananian/
+   Supports:
+       * Kodi
+       * Sick Beard - periodic TV show downloading
+       * SABnzbd - usenet downloading
+       * CouchPotato - feature length video downloading
+       * Transmission - bittorrent client
+       * Python
+   ```
+   sudo apt-get install build-essential git python-imaging python-dev python-setuptools python-pip python-cherrypy vnstat smartmontools -y
+   sudo pip install psutil
+   sudo git clone https://github.com/Hellowlol/HTPC-Manager /opt/HTPCManager
+   sudo chown -R pi:pi /opt/HTPCManager
+   python /opt/HTPCManager/Htpc.py --daemon
+   ```
+   * Start at boot
+   ```
+   sudo cp /opt/HTPCManager/initd /etc/init.d/htpcmanager
+   sudo nano /etc/init.d/htpcmanager
+   >> APP_PATH=/opt/HTPCManager
+   sudo chmod +x /etc/init.d/htpcmanager
+   sudo update-rc.d htpcmanager defaults
+   ```
 
 Access: http://ip.address:8085
 
 14. Other useful services
-* vsftpd
-* NFS
-* Samba
-* nginx for reverse proxy: http://www.htpcguides.com/?s=reverse+proxy
+   * vsftpd
+   * NFS
+   * Samba
+   * nginx for reverse proxy: http://www.htpcguides.com/?s=reverse+proxy
 
 
 Honourable mentions
