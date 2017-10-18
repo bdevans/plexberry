@@ -29,11 +29,11 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 
 ## Useful general guides
 
-	* https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
-	* https://pimylifeup.com/raspberry-pi-plex-server/
-	* https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
-	* https://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
-	* https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
+* https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
+* https://pimylifeup.com/raspberry-pi-plex-server/
+* https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
+* https://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
+* https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
 
 ## Building the plex server
 
