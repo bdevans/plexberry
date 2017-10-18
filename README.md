@@ -36,17 +36,20 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 * https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
 * https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
 
+## Building the plex server
 
 1. Hardware
-    * Boards
-       * Benchmarks of nine boards:  http://www.phoronix.com/scan.php?page=article&item=raspberry-pi-3&num=1
-       * Raspberry Pi 2
-       * Raspberry Pi 3
-       * ODROID-C2
-       * Banana Pi M3 http://www.banana-pi.org/m3.html
-       * NanoPC-T3 http://www.friendlyarm.com/index.php?route=product/product&path=69&product_id=123
-       * PixiePro https://store.treats4geeks.com/index.php/pixiepro-27.html
-       * HummingBoard https://www.solid-run.com/
+    * Boards - the guide assumes you are using a Raspberry Pi 3 but here are some others to consider:
+       * [Benchmarks of nine boards](http://www.phoronix.com/scan.php?page=article&item=raspberry-pi-3&num=1)
+       * [Raspberry Pi 3](https://www.raspberrypi.org/products/#buy-now-modal)
+       * [Rock64](https://www.pine64.org/?page_id=7147)
+       * [ODROID-C2](https://www.odroid.co.uk/odroid-c2-cat/hardkernel-odroid-c2-board)
+       * [ODROID-XU4Q](https://www.odroid.co.uk/index.php?route=product/product&product_id=813)
+       * [Banana Pi M3](http://www.banana-pi.org/m3.html)
+       * [NanoPC-T3](http://www.friendlyarm.com/index.php?route=product/product&path=69&product_id=123)
+       * [PixiePro](https://store.treats4geeks.com/index.php/pixiepro-27.html)
+       * [HummingBoard](https://www.solid-run.com/)
+       * [UDOO x86 Ultra](https://shop.udoo.org/eu/x86/udoo-x86-ultra.html?___from_store=eu&popup=no)
 
     * SD Cards: http://elinux.org/RPi_SD_cards
     * USB hubs: http://elinux.org/RPi_Powered_USB_Hubs
@@ -60,6 +63,11 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
     - `diskutil unmountDisk /dev/disk2`
     - `sudo dd bs=1m if=~/Downloads/2016-05-27-raspbian-jessie.img of=/dev/rdisk2`
 
+* Ready-made images
+   - https://github.com/igorpecovnik/Debian-micro-home-server
+   - http://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
+   - http://www.htpcguides.com/raspberry-pi-2-home-media-server-installer-image/
+
 * Try MINIBIAN for a minimal OS.
     - http://minibianpi.wordpress.com/
     - https://sourceforge.net/projects/minibian/
@@ -70,49 +78,43 @@ apt-get install nano sudo rpi-update raspi-config usbutils dosfstools -y
 apt-get remove initramfs-tools -y
 ```
 
-## Expand SD Filesystem and Overclock
+### Expand SD Filesystem and Overclock
 ```
 raspi-config
 reboot
 ```
 
-## Update Raspberry Pi Firmware
+### Update Raspberry Pi Firmware
 ```
 rpi-update
 reboot
 ```
 
-## Update the packages and distribution
+### Update the packages and distribution
 ```
 apt-get upgrade -y
 apt-get dist-upgrade -y
 ```
 
-## Optional WiFi tools
+### Optional WiFi tools
 `apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y`
 
-## Add the user
+### Add the user
 ```
 adduser pi
 usermod -a -G sudo pi
 ```
 
-## Optional install GUI then enable boot to desktop
+### Optional install GUI then enable boot to desktop
 ```
 sudo apt-get install lxde -y
 sudo raspi-config
 ```
 
-## Clean the packages
+### Clean the packages
 `sudo apt-get clean`
 
-## Ready-made images
-* https://github.com/igorpecovnik/Debian-micro-home-server
-* http://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
-* http://www.htpcguides.com/raspberry-pi-2-home-media-server-installer-image/
-
-
-* Change the password
+### Change the password
 `passwd`
 
 3. Install Plex server
@@ -132,23 +134,24 @@ sudo raspi-config
    * http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/
    * https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/
    * https://www.raspberrypi.org/forums/viewtopic.php?t=38429
-```
-dmesg
-ls -l /dev/disk/by-uuid/
-sudo blkid
-sudo fdisk -l
-cat /proc/mounts
-```
-## Test fstab
-```
-sudo mount -a
-mount_disk.sh sda1 ext4 library
-```
-## Get format automatically? library is optional
-    * Move cache to external harddisk
+   
+   ```
+   dmesg
+   ls -l /dev/disk/by-uuid/
+   sudo blkid
+   sudo fdisk -l
+   cat /proc/mounts
+   ```
+   * Test fstab
+   ```
+   sudo mount -a
+   mount_disk.sh sda1 ext4 library
+   ```
+   * Get format automatically? library is optional
+   * Move cache to external harddisk
 
-Backup media with rsync [options] SOURCE DESTINATION
-`rsync -arvhP /mnt/backup/Music /mnt/library/`
+   * Backup media with `rsync [options] SOURCE DESTINATION`
+   ```rsync -arvhP /mnt/backup/Music /mnt/library/```
 
 6. Setup a TV tuner
 * Client
@@ -163,7 +166,7 @@ Backup media with rsync [options] SOURCE DESTINATION
     * https://forums.plex.tv/discussion/139628/plex-and-tv-tuners
     * https://www.reddit.com/r/PleX/comments/2zhap7/plex_and_ota_tuners/
     * HDHomerun https://www.silicondust.com/hdhomerun/ using the HDHR View Plugin (requires Plex Pass)
-    *** https://tvheadend.org
+    * https://tvheadend.org
         - https://tvheadend.org/projects/tvheadend/wiki/AptRepository
     * http://www.mumudvb.net wget http://www.mumudvb.net/release/mumudvb_2-1_armhf.deb
     * https://www.mythtv.org/wiki/Raspberry_Pi
@@ -174,11 +177,11 @@ Backup media with rsync [options] SOURCE DESTINATION
     b) metadata: /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Metadata/
 
     to Harddisk before adding folders
-* Click the settings icon in the top right, Click Server and then Transcoder in the left pane.
-* Make sure SHOW ADVANCED is enabled underneath Server.
-* Scroll down to Transcoder temporary directory and set your USB external drive’s mount path (e.g. /mnt/usbstorage not /dev/sda1)
-* Scroll down further and hit Save Changes
-* https://smyl.es/how-to-move-plex-metadata-and-index-data-to-new-driver-andor-directory-location/
+   * Click the settings icon in the top right, Click Server and then Transcoder in the left pane.
+   * Make sure SHOW ADVANCED is enabled underneath Server.
+   * Scroll down to Transcoder temporary directory and set your USB external drive’s mount path (e.g. /mnt/usbstorage not /dev/sda1)
+   * Scroll down further and hit Save Changes
+   * https://smyl.es/how-to-move-plex-metadata-and-index-data-to-new-driver-andor-directory-location/
 
 8. Open http://ip.address:32400/web and add media folders.
 To manually start the plex server:
@@ -226,7 +229,7 @@ sudo git clone https://github.com/Hellowlol/HTPC-Manager /opt/HTPCManager
 sudo chown -R pi:pi /opt/HTPCManager
 python /opt/HTPCManager/Htpc.py --daemon
 ```
-## Start at boot
+* Start at boot
 ```
 sudo cp /opt/HTPCManager/initd /etc/init.d/htpcmanager
 sudo nano /etc/init.d/htpcmanager
