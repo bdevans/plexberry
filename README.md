@@ -21,11 +21,11 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 * Backup or transfer media with [rsync](https://www.computerhope.com/unix/rsync.htm)
 ```rsync [options] SOURCE DESTINATION```
 
-* For uploading e.g.:
-```rsync -rtvhP ~/Music pi@plexberry.local:/mnt/library/```
+	* For uploading e.g.:
+	```rsync -rtvhP ~/Music pi@plexberry.local:/mnt/library/```
 
-* For backup:
-```rsync -avhP /mnt/library user@nas.local:/mnt/backup/```
+	* For backup:
+	```rsync -avhP /mnt/library user@nas.local:/mnt/backup/```
 
 ## Useful general guides
 
@@ -130,7 +130,7 @@ sudo raspi-config
 
 3. Install Plex server
     - http://www.htpcguides.com/install-plex-media-server-raspberry-pi-2-3-manually/
-    * setup_plex.sh
+    * Edit then run `setup_plex.sh` (edit for the attached hard disk type)
     * Set static IP address and change hostname
 
 4. Setup transcoding
