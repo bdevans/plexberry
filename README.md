@@ -221,9 +221,9 @@ Backup existing images with dd
     * https://github.com/mummybot/convert-videos-for-plex
     * https://github.com/mdhiggins/sickbeard_mp4_automator
 
-14. Rip DVDs to Plex https://www.reddit.com/r/PleX/comments/5l8owa/question_best_practice_for_ripping_owned_dvds_to/
-	  * Handbreak (lossy ~1GB)
-	  * MakeMKV (lossless ~4-8GB)
+14. [Rip DVDs to Plex](https://www.reddit.com/r/PleX/comments/5l8owa/question_best_practice_for_ripping_owned_dvds_to/)
+	* Handbreak (lossy ~1GB)
+	* MakeMKV (lossless ~4-8GB)
 
 15. Re-rip CDs to FLAC (FFmpeg, lossless audio) 
     * Exact Audio Copy https://www.dbpoweramp.com/cd-ripper.htm 
@@ -271,8 +271,12 @@ Access: http://ip.address:8085
 19. [Heatsink for Raspberry Pi](https://www.amazon.co.uk/GorillaPi-Raspberry-aluminium-Significant-Advantage/dp/B01FY9196K)
 
 
-Plex Clients
-============
+Plex Clients and Supported Media Formats
+========================================
+
+See [here](https://support.plex.tv/hc/en-us/articles/203810286-What-media-formats-are-supported-) for a list of supported media formats and support from built-in TV clients. 
+
+Ideally videos should be **MP4** containers with **H.264** (or H.265) video encoding and **AAC** audio encoding. 
 
 * RasPlex
     - http://www.rasplex.com/get-started/download-rasplex.html
