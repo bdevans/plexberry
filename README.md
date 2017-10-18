@@ -23,6 +23,9 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 
 	* For uploading e.g.:
 	```rsync -rtvhP ~/Music pi@plexberry.local:/mnt/library/```
+	
+	* Spaces in the folder names:
+	```rsync -rtvhP ~/TV/Series3 pi@plexberry.local:"/mnt/library/TV/Arrested\ Development/"```
 
 	* For backup:
 	```rsync -avhP /mnt/library user@nas.local:/mnt/backup/```
