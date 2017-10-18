@@ -220,7 +220,7 @@ Backup existing images with dd
    * http://www.htpcguides.com/nag-free-dynamic-dns-raspberry-pi/
    * https://www.dnsdynamic.org/api.php
 
-13. Setup handbrake to automatically transcode files offline
+13. [Setup handbrake to automatically transcode files offline](https://github.com/sladebaumann/raspberry-plex)
     * https://www.rapidseedbox.com/kb/beginners-guide-handbrake
     * https://forums.plex.tv/discussion/comment/1335697/#Comment_1335697
     * https://b3n.org/automatic-ripping-machine/
