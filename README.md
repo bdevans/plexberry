@@ -18,23 +18,22 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 * Check attached disks
 `lsblk`
 
-* Backup or transfer media
-`rsync [options] SOURCE DESTINATION`
-`rsync -arvhP /mnt/backup/Music /mnt/library/`
+* Backup or transfer media with [rsync](https://www.computerhope.com/unix/rsync.htm)
+```rsync [options] SOURCE DESTINATION```
 
-## Useful links
+* For uploading e.g.:
+```rsync -rtvhP ~/Music pi@plexberry.local:/mnt/library/```
 
-   * https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
-   * http://www.htpcguides.com/install-plex-media-server-on-raspberry-pi-2/
-   * http://www.htpcguides.com/install-plex-media-server-on-banana-pi-with-bananian/
-   * http://www.htpcguides.com/raspberry-pi-2-home-media-server-installer-image/
-   * http://www.htpcguides.com/raspberry-pi-2-media-server-image-2015-released/
-   * https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/
-   * https://pimylifeup.com/raspberry-pi-plex-server/
-   * https://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
+* For backup:
+```rsync -avhP /mnt/library user@nas.local:/mnt/backup/```
 
-   * https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
-   * https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
+## Useful general guides
+
+	* https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
+	* https://pimylifeup.com/raspberry-pi-plex-server/
+	* https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
+	* https://www.htpcguides.com/arm-pi-media-server-installer-images-download-page/
+	* https://github.com/alexandregz/awesome-raspberrypi/blob/master/README.md
 
 ## Building the plex server
 
@@ -66,7 +65,7 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 
 * Raspbian
     - https://www.raspberrypi.org/documentation/installation/installing-images/
-    - e.g. [macOS](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md)
+    - e.g. using [macOS](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md)
     - `diskutil list`
     - `diskutil unmountDisk /dev/disk2`
     - `sudo dd bs=1m if=~/Downloads/2016-05-27-raspbian-jessie.img of=/dev/rdisk2`
@@ -125,6 +124,10 @@ sudo raspi-config
 ### Change the password
 `passwd`
 
+### Setup ssh keys for passwordless login
+* [Guide](https://www.cyberciti.biz/faq/how-to-set-up-ssh-keys-on-linux-unix/) to create and install keys. 
+* See also [here](https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/) for setting up shortcuts (with options) for remote server access. 
+
 3. Install Plex server
     - http://www.htpcguides.com/install-plex-media-server-raspberry-pi-2-3-manually/
     * setup_plex.sh
@@ -137,7 +140,7 @@ sudo raspi-config
    * Scroll down to Transcoder temporary directory and set your USB external drive’s mount path (e.g. /mnt/usbstorage not /dev/sda1)
    * Scroll down further and hit Save Changes
 
-5. Mount a harddisk
+5. [Mount a harddisk](https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/)
    * http://www.htpcguides.com/properly-mount-usb-storage-raspberry-pi/
    * http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/
    * https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/
