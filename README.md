@@ -40,12 +40,20 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 
 1. Hardware
     * Boards - the guide assumes you are using a Raspberry Pi 3 but here are some others to consider:
-       * [Benchmarks of nine boards](http://www.phoronix.com/scan.php?page=article&item=raspberry-pi-3&num=1)
+       * Benchamrks and comparison 
+          - [Benchmarks of nine boards](http://www.phoronix.com/scan.php?page=article&item=raspberry-pi-3&num=1)
+          - http://www.makeuseof.com/tag/best-prebuilt-diy-nas-solutions-plex-server/ 
+          - https://en.wikipedia.org/wiki/Comparison_of_single-board_computers 
+          - (Passmark > 2000 for 1080p transcoding https://www.cpubenchmark.net) 
+          - https://beebom.com/best-raspberry-pi-3-alternatives/
        * [Raspberry Pi 3](https://www.raspberrypi.org/products/#buy-now-modal)
        * [Rock64](https://www.pine64.org/?page_id=7147)
        * [ODROID-C2](https://www.odroid.co.uk/odroid-c2-cat/hardkernel-odroid-c2-board)
        * [ODROID-XU4Q](https://www.odroid.co.uk/index.php?route=product/product&product_id=813)
        * [Banana Pi M3](http://www.banana-pi.org/m3.html)
+       * [Intel NUC](https://www.intel.co.uk/content/www/uk/en/products/boards-kits/nuc.html)
+       * [nVidia Shield Pro](https://www.nvidia.com/en-us/shield/)
+       * [Orange Pi](http://www.orangepi.org/orangepiplus2/)
        * [NanoPC-T3](http://www.friendlyarm.com/index.php?route=product/product&path=69&product_id=123)
        * [PixiePro](https://store.treats4geeks.com/index.php/pixiepro-27.html)
        * [HummingBoard](https://www.solid-run.com/)
