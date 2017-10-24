@@ -30,6 +30,17 @@ sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 	* For backup:
 	```rsync -avhP /mnt/library user@nas.local:/mnt/backup/```
 
+* Expand SD Filesystem and Overclock
+```
+raspi-config
+reboot
+```
+
+* Optional WiFi tools
+```
+apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y
+```
+
 ## Useful general guides
 
 * https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
