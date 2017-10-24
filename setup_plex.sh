@@ -88,10 +88,11 @@ fi
 
 echo "Plex server installation complete!"
 
-read -p "Reboot now? [Y/n] " -n 1 -r REPLY
+read -p "Update firmware and reboot now? [Y/n] " -n 1 -r REPLY
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
-    sudo reboot
+    apt-get update && sudo rpi-update
+    sudo apt-get autoremove && sudo apt-get clean && sudo reboot
 else
     echo "Please reboot manually. Exiting!"
 fi
