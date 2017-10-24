@@ -1,6 +1,8 @@
 #!/bin/bash
 # https://www.element14.com/community/community/raspberry-pi/raspberrypi_projects/blog/2016/03/11/a-more-powerful-plex-media-server-using-raspberry-pi-3
 VERSION=stretch #jessie
+USER=pi
+GROUP=pi
 
 # Disk mounting options
 LIBRARY=library
@@ -25,8 +27,8 @@ sudo apt-get install mkvtoolnix libexpat1 ffmpeg -y
 sudo service plexmediaserver restart
 
 # Fix permissions
-sudo usermod -aG pi plex
-sudo usermod -aG plex pi
+sudo usermod -aG $USER plex
+sudo usermod -aG plex $GROUP
 
 echo "Plex server installation complete!"
 
@@ -51,13 +53,13 @@ then
     # uid=pi,gid=pi,noatime
 
     # Set permissions
-    sudo chown -R pi:pi /mnt/$LIBRARY
+    sudo chown -R $USER:$GROUP /mnt/$LIBRARY
     sudo chmod 775 -R /mnt/$LIBRARY
-    sudo setfacl -Rdm g:pi:rwx /mnt/$LIBRARY
-    sudo setfacl -Rm g:pi:rwx /mnt/$LIBRARY
+    sudo setfacl -Rdm g:$GROUP:rwx /mnt/$LIBRARY
+    sudo setfacl -Rm g:$GROUP:rwx /mnt/$LIBRARY
 
     # Mount USB storage
-    sudo mount -o uid=pi,gid=pi /dev/$DISK /mnt/$LIBRARY
+    sudo mount -o uid=$USER,gid=$GROUP /dev/$DISK /mnt/$LIBRARY
 
 else
     echo "Skipping disk mounting..."
