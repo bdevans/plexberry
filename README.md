@@ -10,39 +10,38 @@ The accompanying script `setup_plex.sh` is designed to install and configure ple
 ## Useful commands
 
 * To fully update the system (including firmware):
-```
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo rpi-update
-sudo apt-get autoremove && sudo apt-get clean && sudo reboot
-```
+	```
+	sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade && sudo rpi-update
+	sudo apt-get autoremove && sudo apt-get clean && sudo reboot
+	```
 
 * Check attached disks
-`lsblk`
+	`lsblk`
 
 * Backup or transfer media with [rsync](https://www.computerhope.com/unix/rsync.htm)
-```rsync [options] SOURCE DESTINATION```
+	```rsync [options] SOURCE DESTINATION```
 
-	* For uploading e.g.:
+* For uploading e.g.:
 	```rsync -rtvhP ~/Music pi@plexberry.local:/mnt/library/```
 	
-	* Spaces in the folder names:
+* Spaces in the folder names:
 	```rsync -rtvhP ~/TV/Series3 pi@plexberry.local:"/mnt/library/TV/Arrested\ Development/"```
 
-	* For backup:
+* For backup:
 	```rsync -avhP /mnt/library user@nas.local:/mnt/backup/```
 
 * Expand SD Filesystem and Overclock
-```
-raspi-config
-reboot
-```
+	```
+	raspi-config
+	reboot
+	```
 
 * Optional WiFi tools
-```
-apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y
-```
+	```
+	apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y
+	```
 
 ## Useful general guides
-
 * https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/
 * https://pimylifeup.com/raspberry-pi-plex-server/
 * https://www.reddit.com/r/PleX/comments/41z6ff/raspberry_pi2_as_a_pms_tutorial_and_infos_inside/
@@ -72,13 +71,12 @@ apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y
    * [PixiePro](https://store.treats4geeks.com/index.php/pixiepro-27.html)
    * [HummingBoard](https://www.solid-run.com/)
    * [UDOO x86 Ultra](https://shop.udoo.org/eu/x86/udoo-x86-ultra.html?___from_store=eu&popup=no)
-
 * SD Cards: http://elinux.org/RPi_SD_cards
 * USB hubs: http://elinux.org/RPi_Powered_USB_Hubs
 
 ### Install an OS
 
-* Raspbian
+* Raspbian (Recommended)
     - https://www.raspberrypi.org/documentation/installation/installing-images/
     - e.g. using [macOS](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md)
     - `diskutil list`
@@ -147,15 +145,15 @@ apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y
 * See also [here](https://www.cyberciti.biz/faq/create-ssh-config-file-on-linux-unix/) for setting up shortcuts (with options) for remote server access. 
 
 ### Install Plex server
-- http://www.htpcguides.com/install-plex-media-server-raspberry-pi-2-3-manually/
 * Edit then run `setup_plex.sh` (edit for the attached hard disk type)
 * Set static IP address and change hostname
+* [Manual installation (deprecated)](http://www.htpcguides.com/install-plex-media-server-raspberry-pi-2-3-manually/)
 
 ### Setup transcoding
 * You should set Plex to use your external hard drive for temporary transcoding data after you have mounted your drives properly.
 * Click the settings icon in the top right, Click Server and then Transcoder in the left pane.
 * Make sure SHOW ADVANCED is enabled underneath Server.
-* Scroll down to Transcoder temporary directory and set your USB external drive’s mount path (e.g. /mnt/usbstorage not /dev/sda1)
+* Scroll down to Transcoder temporary directory and set your USB external drive’s mount path (e.g. `/mnt/usbstorage` not `/dev/sda1`)
 * Scroll down further and hit Save Changes
 
 ### [Mount a harddisk](https://devtidbits.com/2013/03/21/using-usb-external-hard-disk-flash-drives-with-to-your-raspberry-pi/)
@@ -203,7 +201,6 @@ apt-get install firmware-linux-nonfree wireless-tools wpasupplicant -y
 ### Move
 a) transcoding cache and
 b) metadata: /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Metadata/
-
 to Harddisk before adding folders
 * Click the settings icon in the top right, Click Server and then Transcoder in the left pane.
 * Make sure SHOW ADVANCED is enabled underneath Server.
@@ -277,10 +274,10 @@ Supports:
 * Access: http://ip.address:8085
 
 ### Setup Dynamic DNS
-https://www.duckdns.org/install.jsp
-https://www.dynu.com/en-US/
-https://www.duiadns.net/personal-account
-https://www.clearos.com/products/purchase/clearos-marketplace-apps/cloud/Dynamic_DNS
+* https://www.duckdns.org/install.jsp
+* https://www.dynu.com/en-US/
+* https://www.duiadns.net/personal-account
+* https://www.clearos.com/products/purchase/clearos-marketplace-apps/cloud/Dynamic_DNS
 
 ### Other useful services
 * vsftpd
