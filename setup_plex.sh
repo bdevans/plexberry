@@ -27,8 +27,8 @@ sudo apt-get install mkvtoolnix libexpat1 ffmpeg -y
 sudo service plexmediaserver restart
 
 # Fix permissions
-sudo usermod -aG $USER plex
-sudo usermod -aG plex $GROUP
+sudo usermod -aG $GROUP plex
+sudo usermod -aG plex $USER
 
 echo "Plex server installation complete!"
 
