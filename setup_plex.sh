@@ -19,7 +19,7 @@ sudo apt-get update && sudo apt-get install apt-transport-https binutils -y --fo
 wget -O - https://dev2day.de/pms/dev2day-pms.gpg.key | sudo apt-key add -
 echo "deb https://dev2day.de/pms/ $VERSION main" | sudo tee /etc/apt/sources.list.d/pms.list
 sudo apt-get update  # Necessary after adding the new repository
-sudo apt-get install -t $VERSION plexmediaserver -y
+sudo apt-get install -t $VERSION plexmediaserver-installer -y
 #sudo apt-get update && sudo apt-get upgrade -y
 
 # Install transcoders
