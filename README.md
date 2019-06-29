@@ -1,6 +1,8 @@
 Plexberry
 =========
 
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
 A guide to setting up a plex media server on a Raspberry Pi.
 
 This is a collection of ideas and notes (largely adapted from [element14.com](https://www.element14.com/community/community/raspberry-pi/raspberrypi_projects/blog/2016/03/11/a-more-powerful-plex-media-server-using-raspberry-pi-3) and [htpcguides.com](https://www.htpcguides.com/install-plex-media-server-raspberry-pi-3-image/)) for installing and configuring plex on a Raspberry Pi 3. Use at your own risk!
