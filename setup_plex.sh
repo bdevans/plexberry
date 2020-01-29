@@ -49,7 +49,8 @@ sudo apt-get update && sudo apt-get upgrade -y
 #sudo service plexmediaserver start
 
 sudo apt-get install mkvtoolnix libexpat1 ffmpeg -y
-sudo service plexmediaserver restart
+sudo systemctl restart plexmediaserver
+# sudo service plexmediaserver restart
 
 # Fix permissions
 sudo usermod -aG pi plex
