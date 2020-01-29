@@ -49,12 +49,13 @@ sudo apt-get update && sudo apt-get upgrade -y
 #sudo service plexmediaserver start
 
 sudo apt-get install mkvtoolnix libexpat1 ffmpeg -y
+sudo sed -i 's/PLEX_MEDIA_SERVER_USER=plex/PLEX_MEDIA_SERVER_USER=pi/g' /etc/default/plexmediaserver
 sudo systemctl restart plexmediaserver
 # sudo service plexmediaserver restart
 
 # Fix permissions
-sudo usermod -aG pi plex
-sudo usermod -aG plex pi
+# sudo usermod -aG pi plex
+# sudo usermod -aG plex pi
 
 # Mount USB storage
 if [ "$FORMAT" == "ntfs" ]; then
