@@ -66,8 +66,11 @@ then
     # Set permissions
     sudo chown -R $USER:$GROUP /mnt/$LIBRARY
     sudo chmod 775 -R /mnt/$LIBRARY
-    sudo setfacl -Rdm g:$GROUP:rwx /mnt/$LIBRARY
-    sudo setfacl -Rm g:$GROUP:rwx /mnt/$LIBRARY
+    # Set Access Control Lists if installed
+    if [ -x "$(command -v setfacl)" ]; then
+    	sudo setfacl -Rdm g:$GROUP:rwx /mnt/$LIBRARY
+    	sudo setfacl -Rm g:$GROUP:rwx /mnt/$LIBRARY
+    fi
 
     # Mount USB storage
     sudo mount -o uid=$USER,gid=$GROUP /dev/$DISK /mnt/$LIBRARY
