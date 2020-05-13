@@ -25,9 +25,10 @@ sudo apt-get update && sudo apt-get dist-upgrade
 # Install dependencies, key and Plex package
 sudo apt-get update && sudo apt-get install apt-transport-https binutils -y --force-yes
 wget -O - https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
-echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
 sudo apt-get update # Necessary after adding the new repository
 sudo apt-get install plexmediaserver -y
+# TODO: Replace with sed command to uncomment existing line
+echo deb https://downloads.plex.tv/repo/deb/ public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
 #sudo apt-get update && sudo apt-get upgrade -y
 
 
