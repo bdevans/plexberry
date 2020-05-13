@@ -74,7 +74,8 @@ then
     fi
 
     # Mount USB storage
-    sudo mount -o uid=$USER,gid=$GROUP /dev/$DISK /mnt/$LIBRARY
+    # sudo mount -o uid=$USER,gid=$GROUP /dev/$DISK /mnt/$LIBRARY
+    sudo mount /dev/$DISK /mnt/$LIBRARY
 
 else
     echo "Skipping disk mounting..."
