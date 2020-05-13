@@ -67,8 +67,8 @@ then
     # Set permissions
     sudo chown -R $USER:$GROUP /mnt/$LIBRARY
     sudo chmod 775 -R /mnt/$LIBRARY
-    # Set Access Control Lists if installed
     if [ -x "$(command -v setfacl)" ]; then
+        # Set Access Control Lists if installed
     	sudo setfacl -Rdm g:$GROUP:rwx /mnt/$LIBRARY
     	sudo setfacl -Rm g:$GROUP:rwx /mnt/$LIBRARY
     fi
