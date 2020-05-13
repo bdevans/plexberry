@@ -20,7 +20,7 @@ read -p "Is this correct? " -n 1 -r
 
 # Update packages and distribution
 sudo apt update && sudo apt upgrade -y
-sudo apt update && sudo apt dist-upgrade
+sudo apt update && sudo apt full-upgrade
 
 # Install dependencies, key and Plex package
 sudo apt update && sudo apt install apt-transport-https binutils -y --force-yes
