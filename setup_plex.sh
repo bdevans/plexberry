@@ -19,21 +19,21 @@ read -p "Is this correct? " -n 1 -r
 #fi
 
 # Update packages and distribution
-sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get update && sudo apt-get dist-upgrade
+sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt dist-upgrade
 
 # Install dependencies, key and Plex package
-sudo apt-get update && sudo apt-get install apt-transport-https binutils -y --force-yes
+sudo apt update && sudo apt install apt-transport-https binutils -y --force-yes
 wget -O - https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
-sudo apt-get update # Necessary after adding the new repository
-sudo apt-get install plexmediaserver -y
+sudo apt update # Necessary after adding the new repository
+sudo apt install plexmediaserver -y
 # TODO: Replace with sed command to uncomment existing line
 echo deb https://downloads.plex.tv/repo/deb/ public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
-#sudo apt-get update && sudo apt-get upgrade -y
+#sudo apt update && sudo apt upgrade -y
 
 
 # Install transcoders
-sudo apt-get install mkvtoolnix libexpat1 ffmpeg -y
+sudo apt install mkvtoolnix libexpat1 ffmpeg -y
 sudo sed -i "s/PLEX_MEDIA_SERVER_USER=plex/PLEX_MEDIA_SERVER_USER=$USER/g" /etc/default/plexmediaserver
 sudo systemctl restart plexmediaserver
 # sudo service plexmediaserver restart
@@ -53,9 +53,9 @@ then
 
     # Install drivers if necessary
     if [ "$FORMAT" == "ntfs" ]; then
-        sudo apt-get install ntfs-3g -y
+        sudo apt install ntfs-3g -y
     elif [ "$FORMAT" == "exfat" ]; then
-        sudo apt-get install exfat-fuse exfat-utils -y
+        sudo apt install exfat-fuse exfat-utils -y
     fi
 
     # Edit fstab to automount at startup
@@ -85,8 +85,8 @@ fi
 read -p "Update firmware and reboot now? [Y/n] " -n 1 -r REPLY
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
-    sudo apt-get update && sudo rpi-update
-    sudo apt-get autoremove && sudo apt-get clean && sudo reboot
+    sudo apt update && sudo rpi-update
+    sudo apt autoremove && sudo apt clean && sudo reboot
 else
     echo "Please reboot manually before configuring Plex in a browser. Exiting!"
 fi
