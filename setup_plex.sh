@@ -82,10 +82,12 @@ fi
 
 
 # Upgrade firmware and reboot
-read -p "Update firmware and reboot now? [Y/n] " -n 1 -r REPLY
+read -p "Clean and reboot now? [Y/n] " -n 1 -r REPLY
 if [[ $REPLY =~ ^[Yy]$ ]];
 then
-    sudo apt update && sudo rpi-update
+    # Update firmware
+    # sudo apt update && sudo rpi-update
+    # Clean and reboot
     sudo apt autoremove && sudo apt clean && sudo reboot
 else
     echo "Please reboot manually before configuring Plex in a browser. Exiting!"
