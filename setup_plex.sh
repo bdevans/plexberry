@@ -24,11 +24,18 @@ sudo apt update && sudo apt full-upgrade
 
 # Install dependencies, key and Plex package
 sudo apt update && sudo apt install apt-transport-https binutils -y --force-yes
-wget -O - https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
-sudo apt update # Necessary after adding the new repository
-sudo apt install plexmediaserver -y
-# TODO: Replace with sed command to uncomment existing line
-echo deb https://downloads.plex.tv/repo/deb/ public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
+sudo mkdir -p /etc/apt/keyrings
+curl -L https://downloads.plex.tv/plex-keys/PlexSign.v2.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/plexmediaserver.v2.gpg
+echo "deb [signed-by=/etc/apt/keyrings/plexmediaserver.v2.gpg] https://repo.plex.tv/deb/ public main" | sudo tee /etc/apt/sources.list.d/plex.list
+sudo apt update && sudo apt install -y plexmediaserver
+
+# Previous
+#wget -O - https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
+#sudo apt update # Necessary after adding the new repository
+#sudo apt install plexmediaserver -y
+## TODO: Replace with sed command to uncomment existing line
+#echo deb https://downloads.plex.tv/repo/deb/ public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
+
 #sudo apt update && sudo apt upgrade -y
 
 
